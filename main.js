@@ -1,8 +1,15 @@
-let tasks = document.querySelector("#tasks");
-let form = document.querySelector("#new-todo-form");
-let input = document.querySelector("#new-todo-input");
+// variables
+let tasks = document.querySelector("#taskList");
+let form = document.querySelector("#newTask");
+let input = document.querySelector("#taskInput");
 
-tasks.addEventListener
+// Helper functions
+let addInput = function(input) {
+
+
+}
+form.addEventListener("submit", addInput())
+
 let addButtons = function() {
     let delButton = document.createElement("button");
     delButton = delButton.classList.add("buttons");
