@@ -10,36 +10,24 @@
 <body>
     <header>
     <h1>Task list</h1>
-    <form id = "new-todo-form">
-        <input type="text"
-        name="" 
-        id="new-todo-input"
-        placeholder="Add a new task.">
-        <input 
-        type="submit" 
-        id="new-todo-submit"
-        value="Add task"
-        >
+    <form id = "newTask">
+        <input type="text" name="input" id="taskInput" placeholder="Add a new task.">
+        <input type="submit" value="Add task" id="addTask">
     </form>
     </header>
 
     <main>
-
          <section>
-            <h2>Tasks</h2>
-            <div id="tasks">
-                <div class="content">
-                    <input 
-                    type="text"
-                    class="text"
-                    value="Køb en agurk"
-                    readonly
-                    >
-                    
+            <h2>Todo List for groceries</h2>
+            <div id="taskList">
+                <div id="tasks" >
+                    <input type="text" name="tasks" class="text">
                 </div>
-                <div class="buttons">
-                    <button class="delete">delete</button>
-                    <button class="edit">edit</button>
+                <div>
+                    <div class="buttons">
+                        <button class="delete">delete</button>
+                        <button class="edit">edit</button>
+                    </div>
                 </div>
             </div>
          </section>
