@@ -1,0 +1,77 @@
+header h1 {
+    margin: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1rem;
+    color: goldenrod ;
+}
+
+body h2 {
+    margin: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1rem;
+    color: green;
+    margin-left: 4rem;
+}
+
+#new-todo-form {
+    display:flex;
+}
+
+#new-todo-submit {
+    border: 2px solid black;
+    font-size: 12px;
+    border-radius: 1rem;
+    margin-left: 0.5rem;
+    height: 2rem;
+    width: 5rem;
+}
+
+#new-todo-input {
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin-left: 2rem;
+    font-size: 25px;
+    width: 25rem;
+    background-color: rgb(169, 162, 212);
+    text-align: center;
+}
+
+#tasks {
+    margin-left: 3rem;
+    display: flex;
+}
+
+#tasks .text{
+    line-height: 20px;
+    vertical-align: middle;
+    margin-right: 0.2rem;
+    width: 20rem;
+    border: solid 1px black;
+    background-color: rgb(206, 194, 218);
+    border-radius: 2rem;
+    text-align: center;
+ }
+
+#tasks .buttons .delete {
+   border: solid 1px black;
+   height: 24px;
+   width: 4rem;
+   line-height: 22px;
+   border-radius: 2rem;
+   vertical-align: middle;
+   background-color: rgb(220, 111, 111);
+}
+#tasks .buttons .edit {
+    border: solid 1px black;
+    height: 24px;
+    width: 3rem;
+    line-height: 22px;
+    border-radius: 2rem;
+    vertical-align: middle;
+    background-color: aquamarine;
+ }
+ 
+
+
+
+
