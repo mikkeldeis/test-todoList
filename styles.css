@@ -1,11 +1,18 @@
 *{
 	margin: 0;
 	padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	box-sizing: border-box;
+
 }
-body {
-    font-family: 'Courier New', Courier, monospace;
+
+input:not([type=checkbox]), button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
 }
+
 h1 {
     margin: 2rem;
     text-align: center;
@@ -33,6 +40,11 @@ h2 {
     margin-left: 0.5rem;
     height: 2rem;
     width: 5rem;
+    font-weight: bold;
+}
+
+#addTask:hover {
+    opacity: 0.5;
 }
 
 #taskInput {
@@ -48,11 +60,13 @@ h2 {
 #taskList {
     margin-left: 2rem;
 }
-
-#tasks .text:hover{
-    background-color: rgb(149, 143, 187);
+.task, .delete, .edit {
+    margin-top: 0.2rem;
+    margin-left: 0.1rem;
 }
-#taskList .text{
+
+
+.task {
     line-height: 20px;
     vertical-align: middle;
     margin-right: 0.2rem;
@@ -62,11 +76,37 @@ h2 {
     border-radius: 2rem;
     text-align: center;
  }
- .strike:hover {
+ .task:hover{
+    opacity: 0.5;
+}
+
+
+.content .delete, .edit{
+   border: solid 1px black;
+   height: 1.2rem;
+   width: 3rem;
+   font-size: 10px;
+   font-weight: bold;
+   border-radius: 1rem;
+   background-color: rgb(220, 111, 111);
+}
+.content {
+    display: flex;
+}
+
+.content .edit {
+    background-color: aquamarine;
+ }
+
+ .content .edit:hover { opacity: 0.5; }
+ .content .delete:hover {opacity: 0.5; }
+    
+ 
+ .task .strike:hover {
     background-color: rgb(149, 143, 187);
  }
 
- .strike {
+ .task .strike {
     line-height: 20px;
     vertical-align: middle;
     margin-right: 0.2rem;
@@ -77,32 +117,6 @@ h2 {
     text-align: center;
     text-decoration: line-through;
  }
-
- #taskList {
-	display: flex;
-    flex-direction: row;
-}
-
-
-#taskList .buttons .delete {
-   border: solid 1px black;
-   height: 24px;
-   width: 4rem;
-   line-height: 22px;
-   border-radius: 2rem;
-   vertical-align: middle;
-   background-color: rgb(220, 111, 111);
-}
-#taskList .buttons .edit {
-    border: solid 1px black;
-    height: 24px;
-    width: 3rem;
-    line-height: 22px;
-    border-radius: 2rem;
-    vertical-align: middle;
-    background-color: aquamarine;
- }
- 
 
 
 
