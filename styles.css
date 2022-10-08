@@ -68,7 +68,6 @@ h2 {
 
 .task {
     line-height: 20px;
-    vertical-align: middle;
     margin-right: 0.2rem;
     width: 20rem;
     border: solid 1px black;
@@ -76,8 +75,23 @@ h2 {
     border-radius: 2rem;
     text-align: center;
  }
+ .task .text{
+    text-align: center;
+ }
  .task:hover{
     opacity: 0.5;
+}
+.glow {
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 2rem;
+    box-shadow: 2px 2px;
+    width: 25rem;
+}
+.glow .text {
+    height: 1.5rem;
+    font-size: 15px;
+    text-align: center;
 }
 
 
@@ -95,8 +109,13 @@ h2 {
 }
 
 .content .edit {
-    background-color: aquamarine;
+    background-color: rgb(29, 207, 147);
  }
+ .content .glowButton {
+    border: 1px solid;
+    box-shadow: 1px 1.5px;
+    background-color: rgb(93, 233, 0);
+}
 
  .content .edit:hover { opacity: 0.5; }
  .content .delete:hover {opacity: 0.5; }

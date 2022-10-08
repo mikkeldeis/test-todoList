@@ -18,8 +18,8 @@ form.addEventListener("submit", function(e){
     content.classList.add("content")
     task.classList.add("task");
     txt.classList.add("text");
-    delButton.classList.add("delete");
     edButton.classList.add("edit")
+    delButton.classList.add("delete");
 
     txt.value = textInp;
     txt.type = "text"
@@ -37,11 +37,21 @@ form.addEventListener("submit", function(e){
     delButton.onclick = function () {
         taskList.removeChild(content);
     }
-    edButton.onclick = function() {
-        txt.removeAttribute("readonly","readonly");
-        task.style.backgroundColor = black;
+    let readonly = true;
+    edButton.onclick = function(e) {
+        if (readonly === true) {
+            txt.removeAttribute("readonly","readonly");
+            content.classList.add("glow");
+            edButton.classList.add("glowButton");
+            txt.focus();
+        }
+        else {
+            txt.setAttribute("readonly","readonly");
+            content.classList.remove("glow");
+            edButton.classList.remove("glowButton");
+        }
+        readonly = !readonly; 
     }
-
 }
 )
 
