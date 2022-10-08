@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,22 @@
     <link rel="stylesheet" href="styles.css">
     <title>Task list</title>
 </head>
+
 <body>
     <header>
-    <h1>Task list</h1>
-    <form id = "newTask">
-        <input type="text" name="input" id="taskInput" placeholder="Add a new task.">
-        <input type="submit" value="Add task" id="addTask">
-    </form>
+        <h1>Task list</h1>
+        <p>Enter a new task in the form below and submit it to the todo list! </p>
+        <form id="newTask">
+            <input type="text" name="input" id="taskInput" placeholder="Add a new task.">
+            <input type="submit" value="Add task" id="addTask">
+        </form>
     </header>
 
     <main>
-        <section>
-            <h2>Todo List for groceries</h2>
-            <div id="taskList">
-                <div class="content glow">
+        <h2>Todo List for groceries</h2>
+        <p>Double click a task if you want to mark it as done. </p>
+        <div id="taskList">
+            <!-- <div class="content glow">
                     <div class="task">
                         <input type="text" class="text" value="test string">
                     </div>
@@ -29,15 +32,15 @@
                 </div>
                 <div class="content">
                     <div class="task">
-                        <input type="text" class="text">
+                        <input type="text" class="text" value="hvad så">
                     </div>
                     <button class="delete">Delete</button>
                     <button class="edit">Edit</button>
                 </div>
-            </div>
-        </section>
+            </div> -->
     </main>
-    
+
     <script src="main.js"></script>
 </body>
+
 </html>

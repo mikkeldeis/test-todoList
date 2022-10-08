@@ -2,9 +2,10 @@
 let taskList = document.querySelector("#taskList");
 let form = document.querySelector("#newTask");
 let input = document.querySelector("#taskInput");
-let striked = false;
+let currentlyEdited = null;
+let readonly = true;
 // Helper functions
-form.addEventListener("submit", function(e){
+form.addEventListener("submit", function (e) {
     e.preventDefault();
     let textInp = input.value;
     console.log(textInp);
@@ -15,57 +16,73 @@ form.addEventListener("submit", function(e){
     let delButton = document.createElement("button");
     let edButton = document.createElement("button");
 
-    content.classList.add("content")
+    content.classList.add("content");
     task.classList.add("task");
     txt.classList.add("text");
     edButton.classList.add("edit")
     delButton.classList.add("delete");
 
     txt.value = textInp;
-    txt.type = "text"
-    txt.setAttribute("readonly","readonly")
+    txt.type = "text";
+    txt.setAttribute("readonly", "readonly")
     delButton.innerHTML = "Delete"
     edButton.innerHTML = "Edit"
 
-    taskList.appendChild(content);
+    taskList.appendChild(content)
     content.appendChild(task);
     content.appendChild(delButton);
     content.appendChild(edButton);
     task.appendChild(txt);
-    input.value = "";
 
     delButton.onclick = function () {
         taskList.removeChild(content);
     }
-    let readonly = true;
-    edButton.onclick = function(e) {
+    edButton.onclick = function (e) {
+        if (striked === true) { return alert("Can't edit a done task"); }
         if (readonly === true) {
-            txt.removeAttribute("readonly","readonly");
-            content.classList.add("glow");
-            edButton.classList.add("glowButton");
-            txt.focus();
+            currentlyEdited = e.currentTarget.parentNode;
+            currentlyEdited.classList.add("glow");
+            let text = currentlyEdited.querySelector(".text")
+            text.removeAttribute("readonly")
+            text.focus();
+            readonly = false;
+            return;
+        }
+        if (currentlyEdited === e.currentTarget.parentNode && readonly === false) {
+            currentlyEdited.classList.remove("glow");
+            let text = currentlyEdited.querySelector(".text")
+            text.setAttribute("readonly", "readonly")
+            readonly = true;
+            return;
+        }
+        else if (readonly === false) {
+            currentlyEdited.classList.remove("glow");
+            let text = currentlyEdited.querySelector(".text")
+            text.setAttribute("readonly", "readonly")
+
+            currentlyEdited = e.currentTarget.parentNode;
+            currentlyEdited.classList.add("glow");
+            text = currentlyEdited.querySelector(".text")
+            text.removeAttribute("readonly")
+            text.focus();
+            readonly = false;
+        }
+    }
+
+    let striked = false;
+    task.addEventListener("dblclick", function (e) {
+        if (readonly === false) return alert("Please finish editing task before marking as done!");
+        if (striked === false) {
+            txt.classList.add("strike");
+            striked = true;
         }
         else {
-            txt.setAttribute("readonly","readonly");
-            content.classList.remove("glow");
-            edButton.classList.remove("glowButton");
+            txt.classList = "text"
+            striked = false;
         }
-        readonly = !readonly; 
     }
+    )
+    input.value = "";
 }
 )
 
-
-
-taskList.addEventListener("dblclick", function(e){
-    if (striked === false ) {
-        task.done;
-        e.toElement.classList = "strike"
-        striked = true;
-    }
-    else {
-        e.toElement.classList = "text"
-        striked = false;
-    }
-}
-)

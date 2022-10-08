@@ -14,7 +14,6 @@ input:not([type=checkbox]), button {
 }
 
 h1 {
-    margin: 2rem;
     text-align: center;
     margin-bottom: 1rem;
     color: rgb(12, 180, 236);
@@ -22,15 +21,22 @@ h1 {
 }
 
 h2 {
-    margin: 2rem;
-    text-align: center;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
     color: rgb(12, 180, 236) ;
-    margin-left: 4rem;
+    text-align: center;
 }
-
+header p {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+main p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
 #newTask {
     display:flex;
+    margin: auto;
 }
 
 #addTask {
@@ -38,8 +44,9 @@ h2 {
     font-size: 12px;
     border-radius: 1rem;
     margin-left: 0.5rem;
+    margin-right: 1rem;
     height: 2rem;
-    width: 5rem;
+    width: 4rem;
     font-weight: bold;
 }
 
@@ -50,9 +57,9 @@ h2 {
 #taskInput {
     border: 2px solid black;
     border-radius: 1rem;
-    margin-left: 2rem;
-    font-size: 25px;
-    width: 25rem;
+    margin-left: 7rem;
+    font-size: 16px;
+    width: 35%;
     background-color: rgb(169, 162, 212);
     text-align: center;
 }
@@ -66,36 +73,39 @@ h2 {
 }
 
 
-.task {
+.content .task {
     line-height: 20px;
     margin-right: 0.2rem;
-    width: 20rem;
+    width: 15rem;
     border: solid 1px black;
     background-color: rgb(206, 194, 218);
     border-radius: 2rem;
     text-align: center;
  }
- .task .text{
+ .content .text{
     text-align: center;
  }
  .task:hover{
     opacity: 0.5;
 }
+.glow .text {
+    font-size: 14px;
+    font-weight: bold;
+}
 .glow {
     border: 1px solid;
-    padding: 10px;
-    border-radius: 2rem;
+    padding: 4px;
+    border-radius: 1rem;
     box-shadow: 2px 2px;
-    width: 25rem;
+    margin-right: 23rem;
 }
-.glow .text {
-    height: 1.5rem;
-    font-size: 15px;
-    text-align: center;
+
+.text {
+    font-size: 12px;
 }
 
 
-.content .delete, .edit{
+.content .delete, .content .edit{
    border: solid 1px black;
    height: 1.2rem;
    width: 3rem;
@@ -121,20 +131,14 @@ h2 {
  .content .delete:hover {opacity: 0.5; }
     
  
- .task .strike:hover {
+ .strike:hover {
     background-color: rgb(149, 143, 187);
  }
 
- .task .strike {
-    line-height: 20px;
-    vertical-align: middle;
-    margin-right: 0.2rem;
-    width: 20rem;
-    border: solid 1px black;
-    background-color: rgb(206, 194, 218);
-    border-radius: 2rem;
-    text-align: center;
+ .strike {
     text-decoration: line-through;
+    font-weight: bold;
+    opacity: 0.8;
  }
 
 
